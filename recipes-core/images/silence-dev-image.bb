@@ -1,27 +1,15 @@
 DESCRIPTION = "Silence develop image"
+LICENSE = "MIT"
 
-inherit core-image
-
-DISTRO_FEATURES_append = " \
-    bluez5 \
-    bluetooth \
-    wifi \
-"
+require silence-image.bb
 
 IMAGE_FEATURES += " \
-    package-management \
-    ssh-server-openssh \
     debug-tweaks \
+    tools-debug \
+    tools-testapps \
+    ssh-server-dropbear \
 "
 
 IMAGE_INSTALL_append = " \
-    linux-firmware-bcm43430 \
-    bluez5 \
-    i2c-tools \
-    python-smbus \
-    bridge-utils \
-    hostapd \
-    dhcp-server \
-    iptables \
-    wpa-supplicant \
+    silence-packagegroup-testapps \
 "
