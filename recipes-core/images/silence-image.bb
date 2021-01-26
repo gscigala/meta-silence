@@ -1,5 +1,5 @@
 SUMMARY = "Silence image image"
-LICENSE = "MIT"
+LICENSE = "GPLv3"
 
 inherit core-image
 

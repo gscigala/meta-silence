@@ -1,5 +1,5 @@
 DESCRIPTION = "Silence connected-clock with cron image"
-LICENSE = "MIT"
+LICENSE = "GPLv3"
 
 require silence-image.bb
 
