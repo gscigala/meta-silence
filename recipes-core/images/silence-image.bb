@@ -8,4 +8,5 @@ IMAGE_FEATURES += "splash"
 IMAGE_INSTALL_append = " \
     connman \
     connman-client \
+    tzdata \
 "
