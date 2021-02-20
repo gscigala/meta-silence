@@ -11,6 +11,6 @@ IMAGE_FEATURES += " \
 "
 
 IMAGE_INSTALL_append = " \
-    connected-clock \
+    connected-clock-with-cron \
     silence-packagegroup-testapps \
 "
