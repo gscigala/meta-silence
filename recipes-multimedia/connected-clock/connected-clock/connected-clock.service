@@ -1,5 +1,7 @@
 [Unit]
-Description=Manage connected clock
+Description=Silence connected clock
+After=time-sync.target
+Wants=time-sync.target
 
 [Service]
 ExecStart=/usr/bin/connected-clock -p /etc/connected-clock/bigben -v 5
