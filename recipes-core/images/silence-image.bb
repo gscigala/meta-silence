@@ -10,3 +10,5 @@ IMAGE_INSTALL_append = " \
     connman-client \
     tzdata \
 "
+
+EXTRA_IMAGE_FEATURES += " read-only-rootfs"
