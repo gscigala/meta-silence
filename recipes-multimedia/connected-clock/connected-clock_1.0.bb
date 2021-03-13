@@ -11,7 +11,7 @@ SRCREV = "2d0b9d6c766c2354646a7ade5a45d75d4853fd4c"
 S = "${WORKDIR}/git" 
 
 DEPENDS += "gstreamer1.0 boost"
-RDEPENDS_${PN} = "gstreamer1.0 boost"
+RDEPENDS_${PN} = "gstreamer1.0 gstreamer1.0-plugins-base boost"
 
 inherit meson systemd
 
