@@ -5,6 +5,11 @@ inherit core-image
 
 IMAGE_FEATURES += "splash"
 
+IMAGE_FEATURES_remove = " \
+    nfs-client \
+    nfs-server \
+"
+
 IMAGE_INSTALL_append = " \
     connman \
     connman-client \
