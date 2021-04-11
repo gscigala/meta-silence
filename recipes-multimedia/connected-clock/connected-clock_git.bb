@@ -3,10 +3,10 @@ LICENSE = "GPLv3"
 LIC_FILES_CHKSUM = "file://${S}/LICENSE;md5=1ebbd3e34237af26da5dc08a4e440464"
 
 FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
-SRC_URI = "git://github.com/gscigala/connected-clock.git;protocol=git \
+SRC_URI = "git://github.com/gscigala/connected-clock.git;protocol=git;branch=develop \
 		file://connected-clock.service \
 "
-SRCREV = "2d0b9d6c766c2354646a7ade5a45d75d4853fd4c"
+SRCREV = "${AUTOREV}"
 
 S = "${WORKDIR}/git" 
 
