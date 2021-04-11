@@ -12,5 +12,6 @@ IMAGE_FEATURES += " \
 
 IMAGE_INSTALL_append = " \
     connected-clock-with-cron \
+    shairport-sync \
     silence-packagegroup-testapps \
 "
