@@ -1,7 +1,7 @@
 SUMMARY = "Silence recipe to activate connected-clock with cron"
-LICENSE = "GPLv3"
+LICENSE = "GPL-3.0-only"
 
-RDEPENDS_${PN} = "connected-clock cronie"
+RDEPENDS:${PN} = "connected-clock cronie"
 
 do_install() {
         install -d ${D}${sysconfdir}/cron.d

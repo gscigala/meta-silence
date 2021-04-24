@@ -3,6 +3,6 @@ LICENSE = "GPLv3"
 
 require silence-image.bb
 
-IMAGE_INSTALL_append = " \
+IMAGE_INSTALL:append = " \
     connected-clock-with-cron \
 "

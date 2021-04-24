@@ -1,4 +1,4 @@
-do_install_append() {
+do_install:append() {
 
     # enable time-wait-sync service
     install -d ${D}${sysconfdir}/systemd/system/sysinit.target.wants
