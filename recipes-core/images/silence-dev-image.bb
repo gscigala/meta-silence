@@ -10,7 +10,7 @@ IMAGE_FEATURES += " \
     ssh-server-dropbear \
 "
 
-IMAGE_INSTALL_append = " \
+IMAGE_INSTALL:append = " \
     connected-clock-with-cron \
     silence-packagegroup-testapps \
 "

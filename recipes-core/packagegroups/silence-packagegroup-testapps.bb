@@ -1,12 +1,12 @@
 DESCRIPTION = "Silence test application packagegroup"
 SUMMARY = "Silence packagegroup - tools/testapps"
-LICENSE = "GPLv3"
+LICENSE = "GPL-3.0-only"
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
 inherit packagegroup
 
-RDEPENDS_${PN} = " \
+RDEPENDS:${PN} = " \
     htop \
     mc \
     nano \

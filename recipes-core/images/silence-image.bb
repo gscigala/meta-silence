@@ -5,12 +5,12 @@ inherit core-image
 
 IMAGE_FEATURES += "splash"
 
-IMAGE_FEATURES_remove = " \
+IMAGE_FEATURES:remove = " \
     nfs-client \
     nfs-server \
 "
 
-IMAGE_INSTALL_append = " \
+IMAGE_INSTALL:append = " \
     connman \
     connman-client \
     tzdata \
