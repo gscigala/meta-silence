@@ -6,7 +6,7 @@ FILESEXTRAPATHS:prepend := "${THISDIR}/${PN}:"
 SRC_URI = "git://github.com/gscigala/connected-clock;protocol=https;branch=master \
            file://connected-clock.service \
 "
-SRCREV = "2d0b9d6c766c2354646a7ade5a45d75d4853fd4c"
+SRCREV = "4febff21498cf83624fa52e213fbde6506e4eebf"
 
 S = "${WORKDIR}/git" 
 

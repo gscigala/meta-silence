@@ -4,7 +4,7 @@ After=time-sync.target
 Wants=time-sync.target
 
 [Service]
-ExecStart=/usr/bin/connected-clock -p /etc/connected-clock/bigben -v 5
+ExecStart=/usr/bin/connected-clock -c westminster -p /etc/connected-clock/westminster/bigben -v 5
 Restart=on-failure
 
 [Install]
