@@ -1,7 +1,7 @@
 DESCRIPTION = "Silence develop image"
-LICENSE = "GPLv3"
+LICENSE = "GPL-3.0-only"
 
-require silence-image.bb
+include recipes-core/images/silence-image.bb
 
 IMAGE_FEATURES += " \
     debug-tweaks \

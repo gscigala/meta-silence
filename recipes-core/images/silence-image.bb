@@ -1,9 +1,7 @@
 SUMMARY = "Silence image image"
-LICENSE = "GPLv3"
+LICENSE = "GPL-3.0-only"
 
-inherit core-image
-
-IMAGE_FEATURES += "splash"
+include recipes-core/images/core-image-base.bb
 
 IMAGE_FEATURES:remove = " \
     nfs-client \
