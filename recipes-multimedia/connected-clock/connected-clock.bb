@@ -17,7 +17,7 @@ inherit meson systemd pkgconfig
 
 do_install:append() {
         install -d ${D}${systemd_system_unitdir}
-        install -m 0644 ${UNPACKDIR}/connected-clock.service ${D}${systemd_system_unitdir}
+        install -m 0644 ${WORKDIR}/connected-clock.service ${D}${systemd_system_unitdir}
 }
 
 SYSTEMD_SERVICE:${PN} = "connected-clock.service"

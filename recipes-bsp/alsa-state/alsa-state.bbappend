@@ -5,5 +5,5 @@ SRC_URI += "file://alsa-base.conf"
 
 do_install:append() {
     install -d ${D}${sysconfdir}/modprobe.d
-    install -m 0644 ${UNPACKDIR}/alsa-base.conf ${D}${sysconfdir}/modprobe.d
+    install -m 0644 ${WORKDIR}/alsa-base.conf ${D}${sysconfdir}/modprobe.d
 }
