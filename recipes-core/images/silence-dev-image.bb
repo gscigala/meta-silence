@@ -12,5 +12,8 @@ IMAGE_FEATURES += " \
 
 IMAGE_INSTALL:append = " \
     connected-clock-with-cron \
+    commutator-sytadin \
+    commutator-vigicrues \
+    commutator-idfm-line-reports \
     silence-packagegroup-testapps \
 "

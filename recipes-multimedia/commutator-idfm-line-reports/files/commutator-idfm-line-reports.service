@@ -1,0 +1,11 @@
+[Unit]
+Description=IDFM Line Reports Data Service
+After=systemd-networkd-wait-online.service
+Wants=systemd-networkd-wait-online.service
+
+[Service]
+ExecStart=/usr/bin/commutator-idfm-line-reports --token %%TOKEN%%
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
