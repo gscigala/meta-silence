@@ -1,11 +1,13 @@
 [Unit]
 Description=Vigicrues Data Service
-After=systemd-networkd-wait-online.service
-Wants=systemd-networkd-wait-online.service
+Requires=dbus.service network-online.target
+After=dbus.service network-online.target
+StartLimitBurst=0
 
 [Service]
 ExecStart=/usr/bin/commutator-vigicrues --stationid %%STATIONID%%
 Restart=on-failure
+RestartSec=10
 
 [Install]
 WantedBy=multi-user.target
