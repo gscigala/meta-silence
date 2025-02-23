@@ -1,12 +1,13 @@
-From 42b54ef97ae2ca449fc1b2c56a3493b88df30f7c Mon Sep 17 00:00:00 2001
+From db01ebf2a6286b02851f8c9125ded9dadc9c4c6c Mon Sep 17 00:00:00 2001
 From: Guillaume SCIGALA <guillaume.scigala@essilor.fr>
 Date: Sun, 23 Feb 2025 18:43:14 +0100
 Subject: [PATCH] Modifications for cross-compile
 
 ---
  .../2in15_e-Paper_G/RaspberryPi_JetsonNano/c/Makefile     | 8 ++++----
+ .../RaspberryPi_JetsonNano/c/examples/EPD_2in15g_test.c   | 2 +-
  .../RaspberryPi_JetsonNano/c/lib/Config/DEV_Config.c      | 4 ++--
- 2 files changed, 6 insertions(+), 6 deletions(-)
+ 3 files changed, 7 insertions(+), 7 deletions(-)
 
 diff --git a/E-paper_Separate_Program/2in15_e-Paper_G/RaspberryPi_JetsonNano/c/Makefile b/E-paper_Separate_Program/2in15_e-Paper_G/RaspberryPi_JetsonNano/c/Makefile
 index 2c81a93..a38c9af 100644
@@ -37,6 +38,19 @@ index 2c81a93..a38c9af 100644
  MSG = -g -O -ffunction-sections -fdata-sections -Wall
  CFLAGS += $(MSG) -D $(EPD)
  
+diff --git a/E-paper_Separate_Program/2in15_e-Paper_G/RaspberryPi_JetsonNano/c/examples/EPD_2in15g_test.c b/E-paper_Separate_Program/2in15_e-Paper_G/RaspberryPi_JetsonNano/c/examples/EPD_2in15g_test.c
+index a1b6f11..b177c63 100644
+--- a/E-paper_Separate_Program/2in15_e-Paper_G/RaspberryPi_JetsonNano/c/examples/EPD_2in15g_test.c
++++ b/E-paper_Separate_Program/2in15_e-Paper_G/RaspberryPi_JetsonNano/c/examples/EPD_2in15g_test.c
+@@ -58,7 +58,7 @@ int EPD_2in15g_test(void)
+     Paint_NewImage(BlackImage, EPD_2IN15G_WIDTH, EPD_2IN15G_HEIGHT, 0, EPD_2IN15G_WHITE);
+     Paint_SetScale(4);
+     Paint_SelectImage(BlackImage);
+-    GUI_ReadBmp_RGB_4Color("./pic/2in15g.bmp", 0, 0);
++    GUI_ReadBmp_RGB_4Color("/etc/e-paper/2in15g.bmp", 0, 0);
+     EPD_2IN15G_Display(BlackImage);
+     DEV_Delay_ms(2000);
+ #endif
 diff --git a/E-paper_Separate_Program/2in15_e-Paper_G/RaspberryPi_JetsonNano/c/lib/Config/DEV_Config.c b/E-paper_Separate_Program/2in15_e-Paper_G/RaspberryPi_JetsonNano/c/lib/Config/DEV_Config.c
 index bef6745..4c2fa73 100644
 --- a/E-paper_Separate_Program/2in15_e-Paper_G/RaspberryPi_JetsonNano/c/lib/Config/DEV_Config.c

@@ -21,4 +21,7 @@ do_compile() {
 do_install() {
     install -d ${D}${bindir}
     install -m 0755 ${S}/E-paper_Separate_Program/2in15_e-Paper_G/RaspberryPi_JetsonNano/c/epd ${D}${bindir}
+
+    install -d ${D}${sysconfdir}/${BPN}
+    install -m 0444 ${S}/E-paper_Separate_Program/2in15_e-Paper_G/RaspberryPi_JetsonNano/c/pic/2in15g.bmp ${D}${sysconfdir}/${BPN}/
 }
