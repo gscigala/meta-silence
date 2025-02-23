@@ -1,0 +1,3 @@
+KERNEL_DEVICETREE:append = " \
+    overlays/hifiberry-dac.dtbo \
+"
