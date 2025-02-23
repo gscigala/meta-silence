@@ -1,11 +1,12 @@
-From 3454297a8e75ff733b8bcdf2391280da39bd0ec2 Mon Sep 17 00:00:00 2001
+From 58c8b74bebc234ae70ecccef6b6a69cfe67e958c Mon Sep 17 00:00:00 2001
 From: Guillaume SCIGALA <guillaume.scigala@essilor.fr>
 Date: Sun, 23 Feb 2025 18:43:14 +0100
 Subject: [PATCH] Modifications for cross-compile
 
 ---
  .../2in15_e-Paper_G/RaspberryPi_JetsonNano/c/Makefile     | 8 ++++----
- 1 file changed, 4 insertions(+), 4 deletions(-)
+ .../RaspberryPi_JetsonNano/c/lib/Config/DEV_Config.c      | 2 +-
+ 2 files changed, 5 insertions(+), 5 deletions(-)
 
 diff --git a/E-paper_Separate_Program/2in15_e-Paper_G/RaspberryPi_JetsonNano/c/Makefile b/E-paper_Separate_Program/2in15_e-Paper_G/RaspberryPi_JetsonNano/c/Makefile
 index 2c81a93..a38c9af 100644
@@ -36,6 +37,19 @@ index 2c81a93..a38c9af 100644
  MSG = -g -O -ffunction-sections -fdata-sections -Wall
  CFLAGS += $(MSG) -D $(EPD)
  
+diff --git a/E-paper_Separate_Program/2in15_e-Paper_G/RaspberryPi_JetsonNano/c/lib/Config/DEV_Config.c b/E-paper_Separate_Program/2in15_e-Paper_G/RaspberryPi_JetsonNano/c/lib/Config/DEV_Config.c
+index bef6745..14fab04 100644
+--- a/E-paper_Separate_Program/2in15_e-Paper_G/RaspberryPi_JetsonNano/c/lib/Config/DEV_Config.c
++++ b/E-paper_Separate_Program/2in15_e-Paper_G/RaspberryPi_JetsonNano/c/lib/Config/DEV_Config.c
+@@ -246,7 +246,7 @@ static int DEV_Equipment_Testing(void)
+ 
+ 	printf("Current environment: ");
+ #ifdef RPI
+-	char systems[][9] = {"Raspbian", "Debian", "NixOS"};
++	char systems[][9] = {"Raspbian", "Debian", "NixOS", "Silence"};
+ 	int detected = 0;
+ 	for(int i=0; i<3; i++) {
+ 		if (strstr(issue_str, systems[i]) != NULL) {
 -- 
 2.48.1
 
