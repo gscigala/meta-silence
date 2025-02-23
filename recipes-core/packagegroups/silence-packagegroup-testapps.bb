@@ -10,4 +10,5 @@ RDEPENDS:${PN} = " \
     htop \
     mc \
     nano \
+    e-paper \
 "
