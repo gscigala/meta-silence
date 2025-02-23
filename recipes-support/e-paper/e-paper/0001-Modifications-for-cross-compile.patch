@@ -1,17 +1,33 @@
-From 8163343e97d68689ca7647dc738a9aa9ccb11b9d Mon Sep 17 00:00:00 2001
+From 3454297a8e75ff733b8bcdf2391280da39bd0ec2 Mon Sep 17 00:00:00 2001
 From: Guillaume SCIGALA <guillaume.scigala@essilor.fr>
-Date: Sat, 22 Feb 2025 18:09:42 +0100
+Date: Sun, 23 Feb 2025 18:43:14 +0100
 Subject: [PATCH] Modifications for cross-compile
 
 ---
- RaspberryPi_JetsonNano/c/Makefile | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ .../2in15_e-Paper_G/RaspberryPi_JetsonNano/c/Makefile     | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
 
-diff --git a/RaspberryPi_JetsonNano/c/Makefile b/RaspberryPi_JetsonNano/c/Makefile
-index 7767600..bc220e9 100644
---- a/RaspberryPi_JetsonNano/c/Makefile
-+++ b/RaspberryPi_JetsonNano/c/Makefile
-@@ -261,7 +261,7 @@ RPI:RPI_DEV RPI_epd
+diff --git a/E-paper_Separate_Program/2in15_e-Paper_G/RaspberryPi_JetsonNano/c/Makefile b/E-paper_Separate_Program/2in15_e-Paper_G/RaspberryPi_JetsonNano/c/Makefile
+index 2c81a93..a38c9af 100644
+--- a/E-paper_Separate_Program/2in15_e-Paper_G/RaspberryPi_JetsonNano/c/Makefile
++++ b/E-paper_Separate_Program/2in15_e-Paper_G/RaspberryPi_JetsonNano/c/Makefile
+@@ -23,12 +23,12 @@ JETSON_DEV_C = $(wildcard $(DIR_BIN)/sysfs_software_spi.o $(DIR_BIN)/sysfs_gpio.
+ 
+ DEBUG = -D DEBUG
+ 
+-# USELIB_RPI = USE_BCM2835_LIB
++USELIB_RPI = USE_BCM2835_LIB
+ # USELIB_RPI = USE_WIRINGPI_LIB
+-USELIB_RPI = USE_LGPIO_LIB
++# USELIB_RPI = USE_LGPIO_LIB
+ # USELIB_RPI = USE_DEV_LIB
+ 
+-LIB_RPI=-Wl,--gc-sections
++LIB_RPI=-Wl,--gc-sections,--hash-style=gnu
+ ifeq ($(USELIB_RPI), USE_BCM2835_LIB)
+ 	LIB_RPI += -lbcm2835 -lm 
+ else ifeq ($(USELIB_RPI), USE_WIRINGPI_LIB)
+@@ -55,7 +55,7 @@ RPI:RPI_DEV RPI_epd
  JETSON: JETSON_DEV JETSON_epd
  
  TARGET = epd
@@ -19,14 +35,6 @@ index 7767600..bc220e9 100644
 +#CC = gcc
  MSG = -g -O -ffunction-sections -fdata-sections -Wall
  CFLAGS += $(MSG) -D $(EPD)
- 
-@@ -303,6 +303,6 @@ JETSON_DEV:
- 	$(CC) $(CFLAGS) $(DEBUG_JETSONI) -c	 $(DIR_Config)/DEV_Config.c -o $(DIR_BIN)/DEV_Config.o $(LIB_JETSONI)  $(DEBUG)
- 
- clean :
--	rm $(DIR_BIN)/*.* 
-+#	rm $(DIR_BIN)/*.* 
- 	rm $(TARGET) 
  
 -- 
 2.48.1
