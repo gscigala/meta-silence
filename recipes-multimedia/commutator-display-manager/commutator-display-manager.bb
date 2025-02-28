@@ -28,8 +28,3 @@ RDEPENDS:${PN} += " \
     opencv \
     nlohmann-json \
 "
-
-do_install() {
-    install -d ${D}${bindir}
-    install -m 0755 ${WORKDIR}/build/commutator-display-manager ${D}${bindir}/commutator-display-manager
-}
