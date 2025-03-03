@@ -8,7 +8,7 @@ SRC_URI = " \
     file://commutator-idfm-line-reports.service \
     file://com.commutator.IdfmLineReports.conf \
 "
-SRCREV = "81636abf4ac5aa7557f86d07f4c32305fe480dc2"
+SRCREV = "e01eb40b98f3a448542a6376e7153787bd42d314"
 
 S = "${WORKDIR}/git"
 

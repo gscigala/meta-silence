@@ -8,7 +8,7 @@ SRC_URI = " \
     file://commutator-sytadin.service \
     file://com.commutator.Sytadin.conf \
 "
-SRCREV = "d2beb72cb568848a3fb018f7638feb3976c3f880"
+SRCREV = "3c87ea680c55ca0655381be0a32335c5ee05de15"
 
 S = "${WORKDIR}/git"
 

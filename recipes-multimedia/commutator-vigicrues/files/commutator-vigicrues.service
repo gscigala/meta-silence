@@ -5,6 +5,7 @@ After=dbus.service network-online.target
 StartLimitBurst=0
 
 [Service]
+Type=notify
 ExecStart=/usr/bin/commutator-vigicrues --stationid %%STATIONID%%
 Restart=on-failure
 RestartSec=10

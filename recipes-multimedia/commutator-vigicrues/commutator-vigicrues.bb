@@ -8,7 +8,7 @@ SRC_URI = " \
     file://commutator-vigicrues.service \
     file://com.commutator.Vigicrues.conf \
 "
-SRCREV = "e208142146b2ab0da673ae3c98273eebc312ffd1"
+SRCREV = "a621c193898a2a62f20de4b40210f6b2752d7ac4"
 
 S = "${WORKDIR}/git"
 
