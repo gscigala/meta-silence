@@ -5,7 +5,7 @@ LIC_FILES_CHKSUM = "file://${S}/LICENSE;md5=1ebbd3e34237af26da5dc08a4e440464"
 FILES:${PN}:append = "${THISDIR}/files"
 SRC_URI = " \
     git://github.com/gscigala/commutator-vigicrues;protocol=https;branch=master \
-    file://commutator-vigicrues.service \
+    file://${BPN}.service \
     file://com.commutator.Vigicrues.conf \
 "
 SRCREV = "a621c193898a2a62f20de4b40210f6b2752d7ac4"
@@ -27,10 +27,10 @@ do_configure:append() {
 
 do_install:append() {
     install -d ${D}${systemd_system_unitdir}
-    install -m 0644 ${WORKDIR}/commutator-vigicrues.service ${D}${systemd_system_unitdir}
+    install -m 0644 ${WORKDIR}/${BPN}.service ${D}${systemd_system_unitdir}
 
     install -d ${D}${sysconfdir}/dbus-1/system.d
     install -m 644 ${WORKDIR}/com.commutator.Vigicrues.conf ${D}${sysconfdir}/dbus-1/system.d/
 }
 
-SYSTEMD_SERVICE:${PN} = "commutator-vigicrues.service"
+SYSTEMD_SERVICE:${PN} = "${BPN}.service"
