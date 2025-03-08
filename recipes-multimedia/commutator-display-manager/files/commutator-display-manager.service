@@ -1,0 +1,13 @@
+[Unit]
+Description=Commutator Display Manager Service
+Requires=commutator-sytadin.service commutator-vigicrues.service commutator-idfm-line-reports.service
+After=commutator-sytadin.service commutator-vigicrues.service commutator-idfm-line-reports.service
+StartLimitBurst=0
+
+[Service]
+ExecStart=/usr/bin/commutator-display-manager
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

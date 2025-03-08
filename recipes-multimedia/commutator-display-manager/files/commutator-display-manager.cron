@@ -1,0 +1,4 @@
+# top of crontab
+0 6 * * * /usr/bin/systemctl start commutator-display-manager
+0 1 * * * /usr/bin/systemctl stop commutator-display-manager
+# end of crontab
