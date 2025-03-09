@@ -16,5 +16,7 @@ IMAGE_INSTALL:append = " \
     commutator-idfm-line-reports \
     commutator-sytadin \
     commutator-vigicrues \
+    epaper-utility \
+    waveshare-e-paper \
     silence-packagegroup-testapps \
 "

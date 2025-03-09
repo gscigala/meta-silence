@@ -1,4 +1,5 @@
-SUMMARY = "Silence Commutator Sytadin recipe"
+SUMMARY = "Silence Commutator Display Manager recipe"
+DESCRIPTION = "Program to display on a epaper screen multiple informations."
 LICENSE = "GPL-3.0-only"
 LIC_FILES_CHKSUM = "file://${S}/LICENSE;md5=1ebbd3e34237af26da5dc08a4e440464"
 
@@ -8,7 +9,6 @@ SRC_URI = " \
     file://${BPN}.service \
     file://${BPN}.cron \
 "
-
 SRCREV = "${AUTOREV}"
 
 S = "${WORKDIR}/git"
