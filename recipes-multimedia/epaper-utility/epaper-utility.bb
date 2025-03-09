@@ -24,7 +24,7 @@ do_install:append() {
     install -d ${D}${systemd_system_unitdir}
     install -m 0644 ${WORKDIR}/${BPN}-splash.service ${D}${systemd_system_unitdir}
 
-install -d ${D}/${sysconfdir}/cron.d
+    install -d ${D}/${sysconfdir}/cron.d
     install ${WORKDIR}/${BPN}-clean.cron ${D}/${sysconfdir}/cron.d/
 }
 
