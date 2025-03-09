@@ -4,7 +4,8 @@ LICENSE = "GPL-3.0-only"
 LIC_FILES_CHKSUM = "file://${S}/LICENSE;md5=1ebbd3e34237af26da5dc08a4e440464"
 
 SRC_URI = " \
-    gitsm://github.com/gscigala/epaper-utility;protocol=https;branch=develop \
+    gitsm://github.com/gscigala/epaper-utility;protocol=https;branch=feature/cross-compile-rpi \
+    file://0001-Modifications-for-cross-compile.patch \
     file://${BPN}-clean.cron \
     file://${BPN}-splash.service \
 "
@@ -19,6 +20,12 @@ RDEPENDS:${PN} += " \
 "
 
 inherit meson systemd
+
+do_patch() {
+    cd ${S}/lib/e-Paper
+    bbnote "Applying my custom patch to lib/e-Paper submodule"
+    git apply '${WORKDIR}/0001-Modifications-for-cross-compile.patch'
+}
 
 do_install:append() {
     install -d ${D}${systemd_system_unitdir}
