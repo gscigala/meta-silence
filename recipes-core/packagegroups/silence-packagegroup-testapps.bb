@@ -10,5 +10,5 @@ RDEPENDS:${PN} = " \
     htop \
     mc \
     nano \
-    e-paper \
+    waveshare-e-paper \
 "
