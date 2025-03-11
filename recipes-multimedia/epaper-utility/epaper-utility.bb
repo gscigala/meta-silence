@@ -23,7 +23,7 @@ inherit meson systemd
 
 do_patch() {
     cd ${S}/lib/e-Paper
-    bbnote "Applying my custom patch to lib/e-Paper submodule"
+    bbnote "Applying patch to lib/e-Paper submodule"
     git apply '${WORKDIR}/0001-Modifications-for-cross-compile.patch'
 }
 

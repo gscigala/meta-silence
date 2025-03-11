@@ -6,6 +6,7 @@ LIC_FILES_CHKSUM = "file://${S}/LICENSE;md5=1ebbd3e34237af26da5dc08a4e440464"
 FILES:${PN}:append = "${THISDIR}/files"
 SRC_URI = " \
     gitsm://github.com/gscigala/commutator-display-manager;protocol=https;branch=feature/yocto-integration \
+    file://0001-Modifications-for-cross-compile.patch \
     file://${BPN}.service \
     file://${BPN}.cron \
 "
@@ -31,6 +32,12 @@ RDEPENDS:${PN} += " \
     nlohmann-json \
     cronie \
 "
+
+do_patch() {
+    cd ${S}/lib/e-Paper
+    bbnote "Applying patch to lib/e-Paper submodule"
+    git apply '${WORKDIR}/0001-Modifications-for-cross-compile.patch'
+}
 
 do_install:append() {
     install -d ${D}${systemd_system_unitdir}
