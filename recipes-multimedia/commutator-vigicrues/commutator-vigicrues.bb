@@ -19,7 +19,11 @@ FILES:${PN} += " \
     ${PYTHON_SITEPACKAGES_DIR}/commutator_vigicrues-*.dist-info/* \
 "
 
-RDEPENDS:${PN} += "python3-dbus python3-pyvigicrues"
+RDEPENDS:${PN} += " \
+    python3-dbus \
+    python3-pyvigicrues \
+    python3-sdnotify \
+"
 
 do_configure:append() {
     sed -i "s/%%STATIONID%%/${SILENCE_COMMUTATOR_VIGICRUES_STATION_ID}/" ${WORKDIR}/commutator-vigicrues.service

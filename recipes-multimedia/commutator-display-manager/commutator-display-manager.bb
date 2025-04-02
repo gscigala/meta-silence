@@ -22,6 +22,7 @@ DEPENDS = " \
     pugixml \
     opencv \
     nlohmann-json \
+    bcm2835 \
 "
 
 RDEPENDS:${PN} += " \

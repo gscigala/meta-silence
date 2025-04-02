@@ -19,7 +19,11 @@ FILES:${PN} += " \
     ${PYTHON_SITEPACKAGES_DIR}/commutator_idfm_line_reports-*.dist-info/* \
 "
 
-RDEPENDS:${PN} += "python3-dbus python3-requests"
+RDEPENDS:${PN} += " \
+    python3-dbus \
+    python3-requests \
+    python3-sdnotify \
+"
 
 do_configure:append() {
     sed -i "s/%%TOKEN%%/${SILENCE_COMMUTATOR_IDFM_LINE_REPORTS_TOKEN}/" ${WORKDIR}/${BPN}.service

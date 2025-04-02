@@ -19,7 +19,12 @@ FILES:${PN} += " \
     ${PYTHON_SITEPACKAGES_DIR}/commutator_sytadin-*.dist-info/* \
 "
 
-RDEPENDS:${PN} += "python3-dbus python3-requests python3-beautifulsoup4"
+RDEPENDS:${PN} += " \
+    python3-dbus \
+    python3-requests \
+    python3-beautifulsoup4 \
+    python3-sdnotify \
+"
 
 do_install:append() {
     install -d ${D}${systemd_system_unitdir}
