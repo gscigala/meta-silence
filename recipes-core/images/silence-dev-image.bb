@@ -19,4 +19,5 @@ IMAGE_INSTALL:append = " \
     epaper-utility \
     waveshare-e-paper \
     silence-packagegroup-testapps \
+    systemd-analyze \
 "

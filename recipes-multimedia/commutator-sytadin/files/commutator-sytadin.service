@@ -1,7 +1,7 @@
 [Unit]
 Description=Sytadin Data Service
-Requires=dbus.service network-online.target
-After=dbus.service network-online.target
+Requires=dbus.service connman-wait-online.service
+After=dbus.service connman-wait-online.service
 StartLimitBurst=0
 
 [Service]

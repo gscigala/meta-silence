@@ -6,11 +6,13 @@ include recipes-core/images/core-image-base.bb
 IMAGE_FEATURES:remove = " \
     nfs-client \
     nfs-server \
+    psplash \
 "
 
 IMAGE_INSTALL:append = " \
     connman \
     connman-client \
+    connman-wait-online \
     tzdata \
 "
 

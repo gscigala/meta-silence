@@ -1,11 +1,11 @@
 [Unit]
 Description=Splash Screen Service
 DefaultDependencies=no
-After=local-fs.target
+After=graphical.target
 
 [Service]
 ExecStart=/usr/bin/epaper-utility -s /etc/epaper/splash.bmp
 Type=oneshot
 
 [Install]
-WantedBy=sysinit.target
+WantedBy=multi-user.target
