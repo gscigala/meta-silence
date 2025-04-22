@@ -6,6 +6,7 @@ FILES:${PN}:append = "${THISDIR}/files"
 SRC_URI = " \
     git://github.com/gscigala/commutator-vigicrues;protocol=https;branch=master \
     file://${BPN}.service \
+    file://${BPN}.cron \
     file://com.commutator.Vigicrues.conf \
 "
 SRCREV = "a621c193898a2a62f20de4b40210f6b2752d7ac4"
@@ -23,6 +24,7 @@ RDEPENDS:${PN} += " \
     python3-dbus \
     python3-pyvigicrues \
     python3-sdnotify \
+    cronie \
 "
 
 do_configure:append() {
@@ -32,6 +34,9 @@ do_configure:append() {
 do_install:append() {
     install -d ${D}${systemd_system_unitdir}
     install -m 0644 ${WORKDIR}/${BPN}.service ${D}${systemd_system_unitdir}
+
+    install -d ${D}/${sysconfdir}/cron.d
+    install ${WORKDIR}/${BPN}.cron ${D}/${sysconfdir}/cron.d/
 
     install -d ${D}${sysconfdir}/dbus-1/system.d
     install -m 644 ${WORKDIR}/com.commutator.Vigicrues.conf ${D}${sysconfdir}/dbus-1/system.d/

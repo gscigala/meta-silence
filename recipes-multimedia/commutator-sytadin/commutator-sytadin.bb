@@ -6,6 +6,7 @@ FILES:${PN}:append = "${THISDIR}/files"
 SRC_URI = " \
     git://github.com/gscigala/commutator-sytadin;protocol=https;branch=master \
     file://${BPN}.service \
+    file://${BPN}.cron \
     file://com.commutator.Sytadin.conf \
 "
 SRCREV = "3c87ea680c55ca0655381be0a32335c5ee05de15"
@@ -24,11 +25,15 @@ RDEPENDS:${PN} += " \
     python3-requests \
     python3-beautifulsoup4 \
     python3-sdnotify \
+    cronie \
 "
 
 do_install:append() {
     install -d ${D}${systemd_system_unitdir}
     install -m 0644 ${WORKDIR}/${BPN}.service ${D}${systemd_system_unitdir}
+
+    install -d ${D}/${sysconfdir}/cron.d
+    install ${WORKDIR}/${BPN}.cron ${D}/${sysconfdir}/cron.d/
 
     install -d ${D}${sysconfdir}/dbus-1/system.d
     install -m 644 ${WORKDIR}/com.commutator.Sytadin.conf ${D}${sysconfdir}/dbus-1/system.d/

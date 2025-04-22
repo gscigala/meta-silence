@@ -1,0 +1,4 @@
+# top of crontab
+50 5 * * * /usr/bin/systemctl start commutator-vigicrues.service
+10 1 * * * /usr/bin/systemctl stop commutator-vigicrues.service
+# end of crontab

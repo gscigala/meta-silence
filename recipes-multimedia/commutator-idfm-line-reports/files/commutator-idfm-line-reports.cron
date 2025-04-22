@@ -1,0 +1,4 @@
+# top of crontab
+50 5 * * * /usr/bin/systemctl start commutator-idfm-line-reports.service
+10 1 * * * /usr/bin/systemctl stop commutator-idfm-line-reports.service
+# end of crontab
