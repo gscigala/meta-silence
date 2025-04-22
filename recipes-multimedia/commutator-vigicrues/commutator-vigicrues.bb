@@ -36,10 +36,10 @@ do_install:append() {
     install -m 0644 ${WORKDIR}/${BPN}.service ${D}${systemd_system_unitdir}
 
     install -d ${D}/${sysconfdir}/cron.d
-    install ${WORKDIR}/${BPN}.cron ${D}/${sysconfdir}/cron.d/
+    install -m 0644 ${WORKDIR}/${BPN}.cron ${D}/${sysconfdir}/cron.d/
 
     install -d ${D}${sysconfdir}/dbus-1/system.d
-    install -m 644 ${WORKDIR}/com.commutator.Vigicrues.conf ${D}${sysconfdir}/dbus-1/system.d/
+    install -m 0644 ${WORKDIR}/com.commutator.Vigicrues.conf ${D}${sysconfdir}/dbus-1/system.d/
 }
 
 SYSTEMD_SERVICE:${PN} = "${BPN}.service"

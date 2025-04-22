@@ -1,4 +1,4 @@
 # top of crontab
-50 5 * * * /usr/bin/systemctl start commutator-sytadin.service
-10 1 * * * /usr/bin/systemctl stop commutator-sytadin.service
+50 5 * * * root /usr/bin/systemctl start commutator-sytadin.service
+10 1 * * * root /usr/bin/systemctl stop commutator-sytadin.service
 # end of crontab
