@@ -8,7 +8,7 @@ SRC_URI = " \
     file://${BPN}.service \
     file://com.commutator.IdfmLineReports.conf \
 "
-SRCREV = "e01eb40b98f3a448542a6376e7153787bd42d314"
+SRCREV = "99deac0f5edbbc59f70b0d2fa3e899cc03831933"
 
 S = "${WORKDIR}/git"
 
