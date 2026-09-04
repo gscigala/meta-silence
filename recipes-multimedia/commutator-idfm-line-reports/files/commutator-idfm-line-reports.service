@@ -9,6 +9,7 @@ Type=notify
 ExecStart=/usr/bin/commutator-idfm-line-reports --token %%TOKEN%%
 Restart=on-failure
 RestartSec=10
+TimeoutSec=300
 
 [Install]
 WantedBy=multi-user.target
